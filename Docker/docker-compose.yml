@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  db1:
+  mariadb:
     image: mariadb:10.5
     container_name: mariadb
     ports:
@@ -17,18 +17,18 @@ services:
     networks:
       - backend
 
-  web1:
+  apache:
     build:
       context: .
       dockerfile: Apache.Dockerfile
-    container_name: web1
+    container_name: apache
     ports:
       - "80:80"
     volumes:
       - ./proyecto-tiempo:/var/www/html
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     environment:
-      DB_HOST: db1
+      DB_HOST: mariadb
       DB_USERNAME: admin
       DB_PASSWORD: admin
       DB_DATABASE: 
