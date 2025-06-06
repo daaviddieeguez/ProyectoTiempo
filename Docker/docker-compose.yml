@@ -30,7 +30,7 @@ services:
       DB_HOST: mariadb
       DB_USERNAME: admin
       DB_PASSWORD: admin
-      DB_DATABASE: 
+      DB_DATABASE: el_tiempo
     depends_on:
       - mariadb
     restart: always
