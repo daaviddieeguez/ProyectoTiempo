@@ -25,7 +25,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./proyecto-tiempo:/var/www/html
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     environment:
       DB_HOST: mariadb
